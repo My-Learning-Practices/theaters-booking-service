@@ -41,8 +41,8 @@ const addtheater = async (theaterDetails: any) => {
 
 const findTheaters = async (searchString: any) => {
   try {
-    const newTheater = await theater.find({ location: searchString });
-    console.log(newTheater);
+    const theaters = await theater.find({ location: searchString });
+    console.log(theaters);
   } catch (error) {
     console.log(error);
   }
@@ -50,8 +50,8 @@ const findTheaters = async (searchString: any) => {
 
 const bookTicket = async (ticketDeatils: any) => {
   try {
-    const newTheater = await ticket.create(ticketDeatils);
-    console.log(newTheater);
+    const newTicket = await ticket.create(ticketDeatils);
+    console.log(newTicket);
   } catch (error) {
     console.log(error);
   }
@@ -59,8 +59,8 @@ const bookTicket = async (ticketDeatils: any) => {
 
 const rescheduleTicket = async (ticketDeatils: any, id: string) => {
   try {
-    const newTheater = await ticket.replaceOne({ _id: id }, ticketDeatils);
-    console.log(newTheater);
+    const updatedTicket = await ticket.replaceOne({ id: id }, ticketDeatils);
+    console.log(updatedTicket);
   } catch (error) {
     console.log(error);
   }
