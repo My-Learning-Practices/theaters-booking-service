@@ -1,14 +1,15 @@
 import express from "express";
 import CRUD from "../database/crudOperations";
+import { config } from "dotenv";
+import bodyParser from "body-parser";
+import router from "../routes/index";
 
-require("dotenv").config();
-var bodyParser = require("body-parser");
-
+/*
+  BASIC SETUP
+*/
+config();
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// parse application/json
 app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3000;
@@ -22,15 +23,7 @@ app.listen(PORT, () => {
 
 */
 
-app.post("/addMovie", async (req, res) => {
-  const movieDetails = req.body?.movieDetails;
-
-  try {
-    res.send(await CRUD.addMovie(movieDetails));
-  } catch (error) {
-    res.status(501).end();
-  }
-});
+app.use("/", router);
 
 app.post("/addShow", async (req, res) => {
   const showDetails = req.body?.showDetails;

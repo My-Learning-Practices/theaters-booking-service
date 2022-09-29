@@ -3,15 +3,6 @@ const show = require("./schemas/show");
 const theater = require("./schemas/theater");
 const ticket = require("./schemas/ticket");
 
-const addMovie = async (movieDetails: any) => {
-  try {
-    const newMovie = await movie.create(movieDetails);
-    console.log(newMovie);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const findMovies = async (searchString: string) => {
   try {
     const movieList = await movie.find({ movieName: searchString });
@@ -74,7 +65,6 @@ const find = async (searchString: any, searchIn: any) => {
 
 export default {
   addShow,
-  addMovie,
   addtheater,
   bookTicket,
   rescheduleTicket,
