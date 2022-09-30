@@ -20,18 +20,8 @@ app.listen(PORT, () => {
 
 /*
   ROUTES BEGINS HERE
-
 */
 
 app.use("/", router);
-
-app.get("/search", async (req, res) => {
-  const searchString = req.query?.searchString;
-  const searchIn = req.query?.searchIn;
-
-  try {
-    res.send(await CRUD.find(searchString, searchIn));
-  } catch (error) {}
-});
 
 export default app;
