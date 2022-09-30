@@ -10,3 +10,5 @@ To start the project run following commands:
 - Express.js
 - Node.js
 - MongoDB
+
+// Set lint checking script
