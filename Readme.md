@@ -11,4 +11,9 @@ To start the project run following commands:
 - Node.js
 - MongoDB
 
-// Set lint checking script
+---
+---
+
+To Do:
+* Add lint check
+* Seprate Routes
