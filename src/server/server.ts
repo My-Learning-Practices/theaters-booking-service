@@ -1,5 +1,4 @@
 import express from "express";
-import CRUD from "../database/crudOperations";
 import { config } from "dotenv";
 import bodyParser from "body-parser";
 import router from "../routes/index";
