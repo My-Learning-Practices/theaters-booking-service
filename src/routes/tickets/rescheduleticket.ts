@@ -1,6 +1,6 @@
 import { RequestHandler, Request, Response } from "express";
 
-const ticket = require("../../database/schemas");
+const ticket = require("../../database/schemas/ticket");
 
 const rescheduleTicket: RequestHandler = async (
   req: Request,
