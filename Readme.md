@@ -12,8 +12,8 @@ To start the project run following commands:
 - MongoDB
 
 ---
----
 
 To Do:
-* Add lint check
-* Seprate Routes
+
+- [] Add lint check
+- [x] Seprate Routes

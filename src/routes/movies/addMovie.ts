@@ -2,7 +2,7 @@ import { RequestHandler, Request, Response } from "express";
 
 const movie = require("../../database/schemas/movie");
 
-export const addMovie: RequestHandler = async (req: Request, res: Response) => {
+const addMovie: RequestHandler = async (req: Request, res: Response) => {
   const movieDetails = req.body?.movieDetails;
   try {
     const newMovie = await movie.create(movieDetails);
@@ -13,3 +13,5 @@ export const addMovie: RequestHandler = async (req: Request, res: Response) => {
     res.status(501).end("Database Error occured");
   }
 };
+
+export default addMovie;
